@@ -28,13 +28,14 @@
     const [color1,color2,color3] = arr;
 
     const product = {
-        name: 'Iphone',
+        name: 'iphone',
         price: 1000,
-        color: 'gold'
+        color: 'gold',
     }
     //비구조화 할당시 property명으로 뽑아내되, 변수명을 아래와 같이 변경가능
-    const {name:name1,price,color} = product;
-    console.log(name1)
+    //특정 개체에 property가 없을 때 비구조화 할당 시 default값 설정가능
+    const {name:name1,price,color,soldout=false} = product;
+    console.log(soldout)
     </script>
 </body>
 </html>
