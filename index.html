@@ -48,9 +48,28 @@
             bgColor: 'blue'
         }
     }
-    
+
+    //중첨된 객체 리터럴값을 비구조화 할당
     const {size: {width,height}, color:{fontColor,bgColor}} = styles
     console.log(width,height,fontColor,bgColor)
+
+    const person = {
+        name : '홍길동',
+        age : 20,
+        job : '개발자',
+        interests : '게임'
+    }
+
+    // function introduce(obj) {
+    //     console.log('제 이름은 ${obj.name}이고 나이는 ${obj.age}살이며 직업은 ${obj.job}이고 취미는 ${obj.interests}입니다.')
+    // }
+
+    function introduce({name,age,job,interests}) {
+        console.log(`제 이름은 ${name} 이고 나이는 ${age} 살이며 직업은 ${job} 이고 취미는 ${interests} 입니다.`)
+    }
+    
+    introduce(person);
+
     </script>
 </body>
 </html>
