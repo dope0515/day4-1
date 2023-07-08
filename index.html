@@ -7,18 +7,34 @@
 </head>
 <body>
     <script>
+        const arr1 = [1,2,3];
+        const arr2 = [3,4,5];
+
+        //보통 전개연산자는 두개의 참조형 자료를 하나로 합칠때 주로 사용
+        //원본값은 유지하면서 합쳐진 새로운 배열을 반환
+        const combinedArr = [...arr1, ...arr2];
+        console.log(combinedArr);
+
+        //배열의 중복된 값 제거시에는 아래와 같이 사용
+        const newArr = [...new Set(combinedArr)]; //중복되는 값 제거
+        console.log(newArr)
+
         const student1 = {
             name: 'Andy',
             age: 20,
-            gender: 'male'
+            address: 'Seoul'
         }
 
-        const student2 = {...student1};
-        student2.name = 'David'
-
-        console.log('student1',student1);
-        console.log('student2',student2);
-
+        const student2 = {
+            name: 'Andy',
+            age: 21,
+            address: 'Busan'
+        }
+        
+        //객체값을 전개연산자로 합칠때에는 같은 property명일 때 덮어쓰기 되므로 주의가 필요
+        //이때 뒤에있는 값으로 앞의 값을 덮어 씌운다.
+        const combinedStudent = {...student1,...student2};
+        console.log(combinedStudent);
     </script>
 </body>
 </html>
