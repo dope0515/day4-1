@@ -36,6 +36,21 @@
     //특정 개체에 property가 없을 때 비구조화 할당 시 default값 설정가능
     const {name:name1,price,color,soldout=false} = product;
     console.log(soldout)
+
+    //아래 styles 객체에서 각각 width, height, fontColor, bgColor라는 변수명으로 비구조화할당
+    const styles = {
+        size: {
+            width: 300,
+            height: 200
+        },
+        color: {
+            fontColor: 'red',
+            bgColor: 'blue'
+        }
+    }
+    
+    const {size: {width,height}, color:{fontColor,bgColor}} = styles
+    console.log(width,height,fontColor,bgColor)
     </script>
 </body>
 </html>
